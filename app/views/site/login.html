@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+{% block corpo %}
+
+<div id="login-form">
+    <h2>Formulário de Login</h2>
+    {{flash ()}}
+    <form  method="post" action="{{url('login')}}">
+      <input type="email" name="email" placeholder="Digite seu emil" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+      <input type="submit" value="Entrar">
+    </form>
+    <div id="ntlogin"><a href="{{url('recuperar/senha')}}">Esqueci minha senha</a></div>
+   
+  </div>
+  <div id="ntlogin"><a href="{{url('cadastro')}}">Não tenho cadastro ainda</a></div>
+  <div id="ntlogin"><a href="{{url('./')}}">Voltar</a></div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{titulo}}</title>
+    <link rel="stylesheet" href="{{url('../public/assets/css/style.css')}}">
+   
+</head>
+<body>
+
+<header>
+    <div id="logo">
+        <h1>Blog Tecnologia</h1>
+    </div>
+    <nav>
+        <a href="{{url('./')}}">Home</a>
+        <a href="{{url('sobre')}}">Sobre</a>
+            {% if id_usuario %}
+       
+            <a href="{{url('sair')}}"><button>Sair</button></a>
+            <a href="{{url('post')}}"><button> Cria Posts </button></a>
+            
+        {% else %}
+        <a href="{{url('cadastro')}}">Fazer Cadastro</a>
+             <a href="{{url('login')}}"><button class="btnlogin">Fazer Login</button></a>
+        {%endif%}
+        <div class="buscador">
+            <form action="{{url('buscar')}}" method="post">
+                <div class="buscadorc">
+                    <input type="search" name="busca" placeholder="buscar">
+                </div>
+                <div class="buscadorc">
+                     <button id="btnBuscar" type="submit">&#128270;</button>
+                </div>
+            </form>
+
+        </div>
+    </nav>
+</header>
+
+{% block corpo %}
+
+{% endblock %}
+
+
+
+<footer>
+    <p> Blog tecnologia &copy;</p> </p>
+</footer>
+
+
+</body>
+
+</html>

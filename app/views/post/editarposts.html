@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block corpo %}
+    
+    <main>
+        {{ flash() }}
+        <section class="apresetacao">
+            <div class="caixaImg">
+                <img src="{{url('assets/img/img.png')}}" alt="img">
+                <div class="informe">
+                    <p>{{texto}}</p>
+                </div>
+            </div>
+            <div class="textoAp">
+                <p>{{texto}}</p>
+                <p>lembre-se</p>
+                <p>coloque informaçoes relevante</p>
+            </div>
+
+        </section>
+
+        <section class="pposts">
+             {% if posts|length %}
+                {% for post in posts %}
+                <section class="pinfo">
+                    <div>
+                        <img src="
+                        {% if post.tb_img_p  %}
+                        {{url('uploads/imgPost/'~post.tb_img_p)}}
+                        {% else %}
+                        {{url('assets/img/padrao.png')}}
+                        {% endif %}
+                        "
+                        
+                         alt="imagem post" class="card-image">
+                    </div>
+                        <div class="card-content">
+                          <p class="card-title">{{post.titulo_post}}</p>
+                          <p class="card-text">{{post.texto}}</p>
+                        </div>
+                        <div class="infp">
+                            <p>{{post.data_post}}</p>
+                        </div>
+                        <div class="btnd">
+                            <a href="{{url('post/deletarrpost/'~post.id_post)}}" ><button id="btndelete">Deletar</button></a>
+                            <a href="{{url('post/editarpost/'~post.id_post)}}"><button id="btneditar">Editar</button></a>
+                        </div>
+                </section> 
+                {% endfor %}   
+                {% else %}   
+                    <div class="cimg">
+                        <img src="../../public/assets/img/images.jpg" alt="sem dados">
+                        <p class="cimgt">Crie um post</p>
+                    </div>
+            {% endif %}
+        </section>
+    </main>
+
+{% endblock %}

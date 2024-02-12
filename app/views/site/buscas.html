@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block corpo  %}
+
+{{flash()}}
+
+
+<section class="caixaP">
+    <section class="pposts">
+       {% if dados.posts|length %}
+          {% for post in dados.posts%}
+          <section class="pinfo">
+            <div>
+                <img src="
+                {% if post.tb_img_p  %}
+                {{url('uploads/imgPost/'~post.tb_img_p)}}
+                {% else %}
+                {{url('assets/img/padrao.png')}}
+                {% endif %}
+                "
+                
+                 alt="imagem post" class="card-image">
+            </div>
+              <div class="titulop">
+                  <p class="inft">{{post.titulo_post}}</p>
+              </div>
+              <div class="textop">
+                  <p>{{post.texto}}</p>
+              </div>
+              
+              <div class="caixaf">
+                  <div class="caixafbtn">
+                   <button class="botaold like">  <a href="{{url('like/'~post.id_post)}}"> &#128077;</a></button>
+
+                   <!-- Botão de dislike -->
+
+                   <button class="botaold deslike"><a href="{{url('deslike/'~post.id_post)}}">&#128078;</a></button>
+                  </div>
+                  <div class="infp">
+                      <p>{{post.data_post}}</p>
+                  </div>
+              </div>
+              
+          </section> 
+          {% endfor %}   
+          {% else %}   
+              <div class="cimg">
+                  <img src="{{url('/assets/img/images.jpg')}}" alt="sem dados">
+                  <p class="cimgt">Crie um post</p>
+              </div>
+      {% endif %}
+  </section>
+</section>
+
+{% endblock %}

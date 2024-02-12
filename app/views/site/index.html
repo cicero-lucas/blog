@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block corpo %}
+
+    <main>
+        {{flash()}}
+        <section class="apresetacao">
+            <div class="caixaImg">
+                <img src="{{url('assets/img/img.png')}}" alt="img">
+            </div>
+            <div class="textoAp">
+                <p>Quer fazer seu post sobre tecnologia</p>
+                <a href="{% if id_usuario %} {{url('post')}} {% else %} {{url('login')}} {%endif %}">
+                    <button>Fazer Post</button>
+                </a>
+            </div>
+
+        </section>
+
+        <section class="caixaCategoria">
+            {% for tipo in tipos %}
+                <a href="{{url('buscar/'~tipo.tipo)}}">
+                    <div class="cardCategoria">
+                            <p> {% if tipo.tipo == "Inteligência Artificial" %} IA {% else %} {{tipo.tipo}} {%endif %}</p>
+                    </div>
+                </a>
+            {%endfor %}
+        </section>
+
+
+             <section class="pposts">
+                {% if posts|length %}
+                   {% for post in posts %}
+                        <section class="caixainf">
+                            <a href="{{url('ver-post/'~post.link_slug)}}"class="cardPost" id="post.id_post">
+                                    <section class="pinfo">
+                                        <div>
+                                            <img src="
+                                            {% if post.tb_img_p  %}
+                                            {{url('uploads/imgPost/'~post.tb_img_p)}}
+                                            {% else %}
+                                            {{url('assets/img/padrao.png')}}
+                                            {% endif %}
+                                            "
+                                            
+                                             alt="imagem post" class="card-image">
+                                        </div>
+                                        <div class="card-content">
+                                          <p class="card-title">{{post.titulo_post}}</p>
+                                          <p class="card-text">{{post.texto}}</p>
+                                        </div>
+                                      
+                                     
+                                            <div class="infp">
+                                                <p>{{post.data_post}}</p>
+                                               
+                                                <button class="botaold like"> <a href="{{url('like/'~post.id_post)}}"> &#128077;</a></button>
+                                            
+                                                <button class="botaold deslike"> <a href="{{url('deslike/'~post.id_post)}}">  &#128078;</a></button>
+                                                  
+                                            </div>
+                                        
+                                </section> 
+                            </a>
+                                
+                            
+                        </section>
+                  
+                   {% endfor %}   
+                   {% else %}   
+                       <div class="cimg">
+                           <img src="../public/assets/img/images.jpg" alt="sem dados">
+                           <p class="cimgt">Crie um post</p>
+                       </div>
+               {% endif %}
+           </section>
+
+    </main>
+
+
+{% endblock %}
+

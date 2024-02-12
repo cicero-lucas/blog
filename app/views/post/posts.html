@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block corpo %}
+        
+  
+
+    <main>
+        {{ flash() }}
+        <section class="apresetacao">
+            <div class="caixaImg">
+                <img src="{{url('assets/img/img.png')}}" alt="img">  
+            </div>
+            <div class="textoAp">
+                <p>Faça seus postes</p>
+            </div>
+
+        </section>
+
+        <section class="pposts">
+            <section class="pcaixa">
+                <div class="infc">
+                    <p class="inftc">Crie seus posts de tecnologia</p>
+                    <p>coloque informaçoes relevante</p>
+                </div>
+                <div class="btnp"><a href="{{url('post/criarpost')}}"><button>Criar Post</button></a></div>
+            </section>
+            <section class="pcaixa">
+                <div class="infc">
+                    <p class="inftc">Edite seus posts </p>
+                    <p>Aqui você pode editar seus posts</p>
+                </div>
+                <div class="btnp"><a href="{{url('post/editarpost')}}"><button>Editar Post</button></a></div>
+            </section>
+            <section class="pcaixa">
+                <div class="infc">
+                    <p class="inftc" >Veja todos os seus post </p>
+                    <p>olhe o seus posts e  seu respetivos cometarios</p>
+                </div>
+                <div class="btnp"><a href="{{url('post/verpost')}}"><button>
+                    Ver Post
+                </button></a></div>
+            </section>
+            <section class="pcaixa">
+                <div class="infc">
+                    <p class="inftc">Apague seus posts de tecnologia</p>
+                    <p>Aqui você pode editar seus posts</p>
+                </div>
+                <div class="btnp"><a href="{{url('post/deletarpost')}}"><button>
+                    Deletar Post
+                </button></a></div>
+            </section>
+        </section>
+
+    
+
+    </main>
+
+  
+   
+</body>
+</html>
+
+{% endblock %}
+

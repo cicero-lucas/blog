@@ -1,0 +1,711 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --tituloPrincipal:#0092FA;
+    --tituloBtn:#2885C7;
+    --tituloC:#3B6F94;
+    --titulonav:#3A5161;
+    --padrao:#fff;
+    
+}
+
+header{
+    background-color: var(--tituloPrincipal);
+    height: 30vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+header h1{
+    padding: 1.5rem 1rem;
+    color: var(--padrao);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.06);
+}
+
+header>nav>a{
+    margin: 1rem;
+    font: 16px arial;
+    text-decoration: none;
+    color: var(--padrao);
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+}
+
+header>nav>a:hover{
+    color: #3B6F94;
+    border-bottom: 2px solid #3B6F94;
+    transition: all 1s ease-in;
+}
+
+nav button, .btnlogin{
+    background-color: #3B6F94;
+    height: 40px;
+    width: 110px;
+    border: none;
+    border-radius: 8px;
+}
+
+nav>button a{
+    color: var(--padrao);
+    text-decoration: none;
+    margin: 0rem 0rem 0rem 1rem;
+}
+
+nav button:hover{
+    background: transparent;
+    border: 2px solid #fff;
+    transition: all 1s ease-in-out;
+}
+
+.buscador{
+    width: 180px;
+    float: right;
+    margin: 0rem 0.2rem 1rem 1rem;
+    position: relative;
+
+}
+
+.buscador .buscadorc input{
+    width: 100%;
+    height: 42px;
+    border: 2px solid var(--titulonav);
+    text-align: center;
+    border-radius: 10px;
+
+}
+.buscador .buscadorc>button{
+    position: absolute;
+    top:0.5px;
+    right: 0;
+    height: 95%;
+    width: 30%;
+    border: none;
+    background:#acd1f8;
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px;
+    font-size: 25px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.apresetacao{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 98%;
+    margin: 2rem auto;
+}
+
+.caixaImg{
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    height: 350px;
+    border: 3px solid #0092FA;
+    position: relative;
+}
+
+.caixaImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.textoAp{
+    background-color: #0092FA;
+    border-radius: 10px;
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.textoAp p{
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    font: 1.2rem arial;
+}
+
+.textoAp button{
+    display: block;
+    margin: 1.5rem auto;
+    width: 100px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #3A5161;
+    font: 700 15px arial;
+    cursor: pointer;
+}
+
+.textoAp button:hover{
+    background-color: transparent;
+    color: white;
+    border: 2px solid #fff;
+    transition: 1s ease-in-out;
+}
+
+/* categoria */
+
+.caixaCategoria{
+    width: 99%;
+    margin: 3rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.caixaCategoria > a{
+    text-decoration: none;
+}
+
+.cardCategoria{
+    width: 120px;
+    height: 120px;
+    border: 2px solid var(--tituloPrincipal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a6dafe;
+    font: 515 16px arial;
+    margin: 1.5rem;
+    cursor: pointer;
+}
+
+.cardCategoria:hover{
+    background: transparent;
+    transform: scale(1.1);
+    transition: 1s ease-in-out;
+}
+
+footer{
+    height: 10vh;
+    background-color: var(--tituloPrincipal);
+    color: #fff;
+    padding: 2rem ;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+   #ntlogin{
+    padding: 0.3rem;
+    
+   }
+   #ntlogin>a{
+    padding: 0.1rem;
+    color: #0056b3;
+    text-decoration: none;
+    border-bottom: 1px solid #0056b3;
+    
+   }
+    #login-form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 70%;
+      border: 2px solid #f7fbff;
+      margin: 6rem auto ;
+     
+    }
+    #login-form h2,#login-form h3,#login-form h4{
+      margin-bottom: 20px;
+      font: 600 21px arial;
+      color: #2885C7;
+      
+    }
+    #login-form input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 1rem 0;
+      border: 1px solid #000000;
+      border-radius: 5px;
+    }
+    
+    #login-form select {
+        width: 80%;
+        height: 35px;
+        margin: 2rem;
+    }
+    #login-form input[type="submit"] {
+      width: 50%;
+      background-color: #285b91;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      margin: 1rem;
+    }
+    #login-form input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .alert-success,.alert-danger, .alert-warning, .alert-info{
+        width: 90%;
+        margin: 1rem auto;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+        font: 500 16px arial;
+    }
+
+    .alert-success{
+        background-color: #9dffc4;
+        color: #015027;
+        text-align: center;
+    }
+    .alert-danger{
+        background-color: #feb5b5;
+        color: #670202;
+    }
+    .alert-warning{
+        background-color: #faffca;
+        color: #6f6000;
+    }
+    .alert-info{
+        background-color: #abdcff;
+        color: #0056b3;
+    }
+    /* Estilo da seção de posts */
+
+.pposts{
+    width: 100%;
+    background-color: #7fabf8;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .card-content {
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .card-text {
+    font-size: 16px;
+    color: #666666;
+  }
+
+  .card-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff9900;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+.caixainf{
+    display: flex;
+    justify-content: center;
+    width: auto; 
+    height: auto;
+   
+}
+
+.cardPost{
+    cursor: pointer;
+    text-decoration: none;
+}
+.cardPost:hover{
+    background-color: #679af3;
+    border-radius: 10px;
+}
+
+/* Estilo de cada post */
+.pinfo {
+    display: flex;
+    width: 340px;
+    height: 340px;
+    flex-direction: column; 
+    margin: 1rem;
+    border: 2px solid var(--padrao);
+    border-radius: 10px;
+    background-color: #fff;
+    
+}
+
+/* Estilo do título do post */
+.titulop {
+    flex: 100%;
+    background-color: var(--tituloPrincipal);
+    border-radius: 1px;
+    margin: 1rem auto;
+    padding: 10px 10px 10px 10px;
+    border-bottom: 2px solid var(--tituloBtn) ;
+    overflow: hidden;
+    text-align: center;
+}
+
+.titulop .inft{
+    font: 600 20px arial;
+    color: white;
+}
+
+/* Estilo do texto do post */
+.textop {
+    flex:100%;
+    text-align: justify;
+    overflow: hidden;
+    margin: 1.5rem;
+    height: 160px;
+}
+
+.pcaixa{
+    background-color: white;
+    border: 1px solid rgb(0, 217, 255);
+    border-radius: 10px;
+    flex: 45%;
+    height: 100px;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.inftc{
+    margin: 0.5rem;
+    font: 500 18px arial;
+    color: #0056b3;
+}
+
+.infp {
+
+ flex: 100%;
+ margin: 0.5rem auto;
+ display: flex;  
+ align-items: center;
+ justify-content: space-around;
+}
+
+.infp>button{
+    margin: 1rem;
+    border: none;
+    text-decoration: none;
+    font-size: 22px;
+    background:none ;
+}
+
+.infp>button{
+    margin: 1rem;
+    border: none;
+    text-decoration: none;
+    font-size: 24px;
+    background:none;
+    padding: 2px;
+}
+.infp>button:hover{
+    background: #0056b3;
+    border-radius: 10px;
+}
+
+.btnp button{
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background-color: #56a6fb;
+    color: #fff;
+    font: 500 15px arial;
+}
+.btnp button:hover{
+    color: #0084ff;
+    border:1px solid #0084ff;
+    background: transparent;  
+}
+
+.btnp button:active{
+    color: #0084ff;
+    border:1px solid #0084ff;
+    background: #c7c7c7;  
+}
+
+
+
+.btnd{
+    flex: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btnd button{
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: #58b1f1;
+  
+}
+
+.btnd #btndelete:hover{
+    background: rgb(243, 54, 54);
+}
+.btnd #btneditar:hover{
+    background: rgb(228, 255, 120);
+}
+
+.informe{
+    background-color: #abffd4;
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    text-align: center;
+    height: 45px;
+    border-radius: 10px;
+}
+
+.informe p{
+    padding: 10px;
+    font: 600 16px arial;
+    color: #015027;
+}
+
+.cimg{
+    width: 97%;
+    height: 400px;
+    margin: 1rem auto;
+}
+
+.cimg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cimg .cimgt{
+    text-align: center;
+    margin: 0.2rem;
+    background-color: #58b1f1;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+button#sair{
+    display: block;
+    background-color: rgb(255, 154, 154);
+    width: 120px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    margin: 5rem auto;
+}
+
+#ntlogin{
+    width: 90%;
+    margin:2rem auto;
+    text-align: center;
+    font: 600 18px arial;
+}
+
+a>button:hover{
+    border: none;
+}
+
+.botao {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+    margin: 10px;
+    font-size: 40px;
+    color: #ffffff;
+    cursor: pointer;
+    }
+
+    .botao-like {
+    background-color: #00ff00;
+    }
+
+    
+    .botao-dislike {
+    background-color: #ff0000;
+    }
+
+    
+    .botao:active {
+    transform: scale(0.9);
+    }
+  
+  
+  /* Estilo da seção de posts */
+  .posts {
+    width: 99%;
+    margin: 3rem auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #999;
+    background-color: #fff;
+  }
+  
+  /* Estilo do título dos posts */
+  #tituloPosts {
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 2rem auto;
+  }
+  
+  /* Estilo do nome do usuário, data e atualização dos posts */
+  #tituloPosts small, #tituloPosts p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+    margin: 1rem auto;
+  }
+  
+  /* Estilo do texto dos posts */
+  .textoPosts {
+    padding: 10px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+    margin: 1rem auto;
+  }
+  
+  /* Estilo do link para voltar */
+  #ntlogin {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+
+@media only screen and (min-width:800px){
+    header{
+        display: flex;
+    }
+
+    
+
+    div#logo{
+        flex:35%;
+        margin: 2% 4%;
+    }
+
+    nav{
+        flex:50%;
+        margin: 3% 3%;
+    }
+
+    .apresetacao{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 90%;
+        margin: 2rem auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .caixaImg{
+        flex: 50%;
+        margin: auto;
+        border-radius: 10px;
+        height: 350px;
+    }
+
+    .textoAp{
+        flex: 45%;
+        border-radius: 10px;
+        background: transparent;
+        width: 100%;
+    }
+
+    
+.textoAp p{
+    padding: 1rem;
+    text-align: center;
+    color: var(--tituloPrincipal);
+    font: 1.2rem arial;
+}
+
+.textoAp button{
+    display: block;
+    margin: 1.5rem auto;
+    width: 160px;
+    height: 46px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--tituloBtn);
+    color: var(--padrao);
+    font: 700 15px arial;
+    cursor: pointer;
+}
+
+.textoAp button:hover{
+    background-color: #0092FA;
+    cursor: pointer;
+}
+
+
+#login-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+    border: 2px solid #0056b3;
+    margin: 2rem auto ;
+  }
+  
+  .pposts{
+    width: 99%;
+    margin: 5rem auto;
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-around;
+  }
+
+  .pinfo{
+    width: 400px;
+  }
+
+  
+
+  
+}
+    
+
+
+

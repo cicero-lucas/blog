@@ -1,0 +1,20 @@
+#ocultar diretorios
+
+Options -indexes
+
+
+#URL Amigavel
+
+
+
+#definir a reicrita da URL
+
+RewriteEngine on
+
+RewriteBase /php/projetovBlog/public
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-l
+
+RewriteRule ^(.*)$ index.php/$1

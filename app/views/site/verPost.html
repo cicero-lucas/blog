@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+
+{% block corpo %}
+    <section class="posts">
+      <div>
+        <img src="
+        {% if post.tb_img_p  %}
+        {{url('uploads/imgPost/'~post.tb_img_p)}}
+        {% else %}
+        {{url('assets/img/padrao.png')}}
+        {% endif %}
+        "
+        
+         alt="imagem post" class="card-image">
+    </div>
+      <div id="tituloPosts">
+        <h5>
+          {{post.titulo_post}}
+        </h5>
+        <small>{{post.nome_u}}</small>
+        <small>{{post.data_post}}</small>
+        <p> atualizado em {{post.pdata_atualizacao}}</p>
+      </div>
+      
+      <div class="textoPosts">
+        {{post.texto}}
+      </div>
+    </section>
+  <div id="ntlogin"><a href="{{url('./')}}">Voltar</a></div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+<div id="login-form">
+    {% if post.id_post %} <h3>Editar Post </h3>
+    {% else %} <h3>Criar Post </h3>
+    {% endif %}
+
+    {{flash ()}}
+
+    <form method="post" enctype="multipart/form-data"
+    action=" {% if post.id_post %} {{url('/post/editarpost/'~post.id_post)}} 
+    {% else %} {{url('/post/criarpost')}}
+    {% endif %}
+    ">
+
+      <div>
+        <div>
+          <img src="
+          {% if post.tb_img_p  %}
+          {{url('uploads/imgPost/'~post.tb_img_p)}}
+          {% else %}
+          {% endif %}
+          "
+          
+           alt="imagem post" class="card-image">
+      </div>
+
+        <label for="imgp">colocar uma imagem</label>
+        <input type="file" id="imgp" name="imgPost" accept=".jpg,.png"
+        >
+      </div>
+    
+      <input type="text" name="titulo" placeholder="Digite o titulo" 
+        {% if post.id_post %} value="{{post.titulo_post}}"
+      {% else %} value=""
+      {% endif %}
+      required>
+
+      <input type="text" name="texto" placeholder="Digite o texto"
+      {% if post.id_post %} value="{{post.texto}}"
+      {% else %} value=""
+      {% endif %}
+      required>
+
+      <select name="tipo" id="">
+        {% for tipo in tipos %}
+        <option value="{{tipo.id_tipo}}" name="tipo" {% if post.fk_tipo==tipo.id_tipo %} selected {%endif%}>
+          {{tipo.tipo}}
+        </option>
+        {%endfor %}
+      </select>
+      <input type="submit" value="Entrar">
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+
+<div id="login-form">
+    <h2>Formulário de Recuperar Senha</h2>
+    {{flash ()}}
+    <form method="post" >
+        {% if a == 0 %}
+          <input type="text" name="nome" placeholder="Digite seu nome completo" required>
+
+        <input type="email" name="email" placeholder="Digite seu email" required>
+       {%else%}
+          <input type="password" name="senha" placeholder="senha" required>
+
+          <input type="password" name="senhaConfimacao" placeholder="Confirme sua senha" required>
+       {%endif %}
+       <input type="submit" value="Entrar">
+
+     
+    </form>
+  </div>
+  <div id="ntlogin"><a href="{{url('./')}}">voltar</a></div>
+{% endblock %}
