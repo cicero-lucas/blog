@@ -2,7 +2,6 @@
 
 namespace app\controllers;
 
-use app\classes\Mensagem;
 use app\Suporte\Template;
 
 class Controlador{

@@ -2,8 +2,7 @@
     namespace app\Suporte;
     use app\Helpers\Helpers;
     use Twig\Lexer;
-// use sistema\Controlador\UsuarioControlador;
-
+// o twig atua melhorando o mvc
     class Template{
 
         private \Twig\Environment $twig;

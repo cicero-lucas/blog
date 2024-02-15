@@ -23,9 +23,7 @@ class Upload{
     public function __construct( string $diretorio=null)
     {
         $this->diretorio=$diretorio ?? 'uploads';
-
         // verificar se o arquivo nao esxite e se o this diretorio não e um diretorio;
-
         if((!file_exists($this->diretorio)) && (!is_dir($this->diretorio)) ){
             mkdir($this->diretorio,0755);
         }
@@ -38,6 +36,7 @@ class Upload{
         }
     }
 
+  
     public function subpastaArquivo(array $arquivo, string $nome=null,string $nomePasta=null,int $tamanhoArquivo=null){
 
         $this->arquivo=$arquivo;
@@ -48,7 +47,7 @@ class Upload{
         $extensao=pathinfo($this->arquivo['name'],PATHINFO_EXTENSION);
 
         $this->tamanhoArquivo= $tamanhoArquivo ?? 2 ;
-
+          
         $extensoesValidas=['pdf','png','jpg'];
         $tiposValidos=[
             'application/pdf',
@@ -57,7 +56,7 @@ class Upload{
             'image/jpg',
             'image/jpeg'
         ];
-
+          // verificar o tipo e as extensoes validas no projeto
         if(!in_array($extensao,$extensoesValidas)){
 
             $this->erro='extenção não permitida! você só pode fazer upload de arquivos tipo .'.implode(' .',$extensoesValidas);
